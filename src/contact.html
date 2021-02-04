@@ -119,7 +119,7 @@
             <div>
               <div class="item__category item__category--50 l-megamenu__cat"><a title="White papers" href="">White papers</a></div>
               <h2 class="headline-2">Some super interesting resource to download</h2>
-              <p class="small-text"><img loading="lazy" src="/assets/images/homework/post.png" class="l-megamenu__image" alt=""> Just download it and enjoy.
+              <p class="small-text"><img loading="lazy" class="lazy" data-src="/assets/images/homework/post.png" class="l-megamenu__image" alt=""> Just download it and enjoy.
               </p>
               <p>
                 <a class="btn btn--bg-darkblue btn--border-blue" href="/" title="Download now: Ovum Report - Vodafone in-network call recording">Download now</a>
@@ -154,7 +154,7 @@
             <div>
               <div class="item__category item__category--79 l-megamenu__cat"><a title="eBooks" href="/">eBooks</a></div>
               <h2 class="headline-2">PCI DSS and the contact center</h2>
-              <p class="small-text"><img loading="lazy" src="/assets/images/homework/img-about-overview-platform.png" class="l-megamenu__image" alt=""> Some text is here so you are impressed and you will click the button below.
+              <p class="small-text"><img loading="lazy" class="lazy" data-src="/assets/images/homework/img-about-overview-platform.png" class="l-megamenu__image" alt=""> Some text is here so you are impressed and you will click the button below.
               </p>
               <p>
                 <a class="btn btn--bg-darkblue btn--border-blue" href="/2" title="Download now">Download now</a>
@@ -174,7 +174,7 @@
             <div>
               <div class="item__category item__category--50 l-megamenu__cat"><a title="White papers" href="/">White papers</a></div>
               <h2 class="headline-2">Report about mobile payment gateways</h2>
-              <p class="small-text"><img loading="lazy" src="/assets/images/homework/post2.png" class="l-megamenu__image" alt=""> An MNO service that doesn&#39;t require a SIM change
+              <p class="small-text"><img loading="lazy" class="lazy" data-src="/assets/images/homework/post2.png" class="l-megamenu__image" alt=""> An MNO service that doesn&#39;t require a SIM change
               </p>
               <p>
                 <a class="btn btn--bg-darkblue btn--border-blue" href="/" title="Download now">Download now</a>
@@ -192,7 +192,7 @@
               <h2 class="headline-8">Always happy to speak!</h2>
               <h1 class="headline-1">Contact us</h1>
               <p>Or come to meet us in London, in the office.</p>
-              <img class="inner-page__header__ico" src="/assets/images/homework/header-ico.png" alt="">
+              <img class="inner-page__header__ico" class="lazy" data-src="/assets/images/homework/header-ico.png" alt="">
           </div>
 
       </header>
@@ -396,6 +396,20 @@
         </div>
     </div>
     </footer>
+
+    <script>
+      if('loading' in HTMLImageElement.prototype || 'loading' in HTMLIFrameElement.prototype) {
+        const resources = document.querySelectorAll("[loading]");
+        resources.forEach(resource => {
+          resource.src = resource.dataset.src;
+        });
+      } else {
+        let script = document.createElement('script');
+        script.async = true;
+        script.src = "/assets/js/homework/vendor/lazyload.min.js";
+        document.body.appendChild(script);
+      }
+    </script>
 
     <script src="/assets/js/homework/vendor/jquery/dist/jquery.min.js"></script>
     <script>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</script>

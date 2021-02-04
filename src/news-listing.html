@@ -248,7 +248,7 @@
                                   </header>
 
                                   <figure>
-                                      <img loading="lazy" width="333" height="208" src="/assets/images/homework/post4.png" alt="">
+                                      <img loading="lazy" width="333" height="208" class="lazy" data-src="/assets/images/homework/post4.png" alt="">
                                   </figure>
 
                                   <div class="text">
@@ -288,7 +288,7 @@
                                   </header>
 
                                   <figure>
-                                      <img loading="lazy" width="333" height="208" src="/assets/images/homework/post5.png" alt="">
+                                      <img loading="lazy" width="333" height="208" class="lazy" data-src="/assets/images/homework/post5.png" alt="">
                                   </figure>
 
                                   <div class="text">
@@ -330,7 +330,7 @@
                                   </header>
 
                                   <figure>
-                                      <img loading="lazy" width="333" height="208" src="/assets/images/homework/post3.png" alt="">
+                                      <img loading="lazy" width="333" height="208" class="lazy" data-src="/assets/images/homework/post3.png" alt="">
                                   </figure>
 
                                   <div class="text">
@@ -370,7 +370,7 @@
                                 </header>
 
                                 <figure>
-                                    <img loading="lazy" width="333" height="208" src="/assets/images/homework/post2.png" alt="">
+                                    <img loading="lazy" width="333" height="208" class="lazy" data-src="/assets/images/homework/post2.png" alt="">
                                 </figure>
 
                                 <div class="text">
@@ -424,7 +424,7 @@
       <div class="l-footer__top">
         <div class="layout">
           <div class="col-15 left">
-            <a title="Home" href="/"><img src="/assets/images/homework/logo.svg" alt="Web Dev Insider" width="141" height="42"></a>
+            <a title="Home" href="/"><img class="lazy" data-src="/assets/images/homework/logo.svg" alt="Web Dev Insider" width="141" height="42"></a>
           </div>
           <div class="col-85 l-footer__top-links right">
             <ul>
@@ -542,7 +542,19 @@
     </footer>
 
 
-
+    <script>
+      if('loading' in HTMLImageElement.prototype || 'loading' in HTMLIFrameElement.prototype) {
+        const resources = document.querySelectorAll("[loading]");
+        resources.forEach(resource => {
+          resource.src = resource.dataset.src;
+        });
+      } else {
+        let script = document.createElement('script');
+        script.async = true;
+        script.src = "/assets/js/homework/vendor/lazyload.min.js";
+        document.body.appendChild(script);
+      }
+    </script>
     <script src="/assets/js/homework/vendor/jquery/dist/jquery.min.js"></script>
     <script>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</script>
     <script data-main="/assets/js/homework/home" src="/assets/js/homework/vendor/requirejs/require.js"></script>

@@ -233,7 +233,7 @@
                 <div class="col-40 left">
                     <div>
                       <p style="text-align: center;">
-                        <img alt="" loading="lazy" src="/assets/images/homework/post.png" height="329" width="307" />
+                        <img alt="" loading="lazy" class="lazy" data-src="/assets/images/homework/post.png" height="329" width="307" />
                       </p>
                     </div>
                   </div>
@@ -420,7 +420,19 @@
     </footer>
 
 
-
+    <script>
+      if('loading' in HTMLImageElement.prototype || 'loading' in HTMLIFrameElement.prototype) {
+        const resources = document.querySelectorAll("[loading]");
+        resources.forEach(resource => {
+          resource.src = resource.dataset.src;
+        });
+      } else {
+        let script = document.createElement('script');
+        script.async = true;
+        script.src = "/assets/js/homework/vendor/lazyload.min.js";
+        document.body.appendChild(script);
+      }
+    </script>
     <script src="/assets/js/homework/vendor/jquery/dist/jquery.min.js"></script>
     <script>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</script>
     <script data-main="/assets/js/homework/home" src="/assets/js/homework/vendor/requirejs/require.js"></script>
