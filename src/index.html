@@ -198,8 +198,7 @@
     </div>
 
     <header
-      class="l-home-banner"
-      style="background-image: url('/assets/images/homework/banner.png')">
+      class="l-home-banner">
       <div class="layout">
         <div class="home-banner__content text">
           <h1 class="headline-1">Seamless<br> payment option</h1>
@@ -236,6 +235,9 @@
         </div>
       </div>
       <a title="Slide down" class="btn btn--border-blue btn--arrow-down" href="#main">Slide down</a>
+      <div class="l-home-banner__img-wrapper">
+        <img sizes="(max-width: 2500px) 100vw, 2500px" srcset="/assets/images/homework/home_banner_564.jpg 564w, /assets/images/homework/home_banner_1024.jpg 1024w, /assets/images/homework/home_banner_1368.jpg 1368w, /assets/images/homework/home_banner_1930.jpg 1920w, /assets/images/homework/home_banner_2600.jpg 2500w" src="/assets/images/homework/home_banner_2600.jpg" style="background-size: cover; background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEACEhISEjISUqKiU0ODI4NE1HQEBHTXRTWVNZU3SxboFuboFusZy9mpCavZz/3MTE3P////////////////////8BISEhISMhJSoqJTQ4Mjg0TUdAQEdNdFNZU1lTdLFugW5ugW6xnL2akJq9nP/cxMTc///////////////////////AABEIAAwAFgMBIgACEQEDEQH/xABaAAADAQAAAAAAAAAAAAAAAAAAAQIFEAADAQEBAAAAAAAAAAAAAAAAARECIQMBAAMBAAAAAAAAAAAAAAAAAAABAgMRAQACAwAAAAAAAAAAAAAAAAABERIhUf/aAAwDAQACEQMRAD8AzFhuclYtYapWVfPTr5BO86ystyzpEAK0A7jgf//Z');" />
+      </div>
     </header>
     <div class="l-shortcuts l-shortcuts--home">
       <div class="layout">
@@ -666,7 +668,13 @@
       <div class="l-footer__top">
         <div class="layout">
           <div class="col-15 left">
-            <a title="Home" href="/"><img class="lazy" data-src="/assets/images/homework/logo.svg" alt="Web Dev Insider" width="141" height="42"></a>
+            <a title="Home" href="/">
+              <picture class="l-footer__logo">
+                <source media="(min-width: 1101px)" srcset="/assets/images/homework/logo.svg">
+                <source media="(max-width: 999px)" 		srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==" sizes="100%">
+                <img loading="lazy" class="lazy" data-src="/assets/images/homework/logo.svg" alt="Web Dev Insider" width="141" height="42">
+              </picture>
+            </a>
           </div>
           <div class="col-85 l-footer__top-links right">
             <ul>
