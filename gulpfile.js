@@ -286,8 +286,8 @@ gulp.task(
     "fonts",
     "videos",
     "extra-files",
-    "images"
-    /*'purgecss',*/
+    "images",
+    "purgecss"
     /*'generate-critical-css',*/
     /*'generate-service-worker',*/
   )
