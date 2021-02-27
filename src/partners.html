@@ -427,7 +427,7 @@
         });
       } else {
         let script = document.createElement('script');
-        script.async = true;
+        script.async = false;
         script.src = "/assets/js/homework/vendor/lazyload.min.js";
         document.body.appendChild(script);
       }
@@ -448,7 +448,7 @@
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
+    s1.async=false;
     s1.src='https://embed.tawk.to/5fc2ba00920fc91564cb9b3c/default';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
@@ -456,8 +456,8 @@
     })();
   </script>
 
-  <script async src="https://js.stripe.com/v3/"></script>
-
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
   <!--End of Tawk.to Script-->
   </body>
 </html>

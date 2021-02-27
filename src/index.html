@@ -83,11 +83,6 @@
           onload="performance.clearMarks('logo-load'); performance.mark('logo-load'); console.log('img onload',performance.getEntriesByType('mark'))"
         >
       </a>
-      <script>
-        performance.clearMarks('logo-load');
-        performance.mark('logo-load');
-        console.log('script after img',performance.getEntriesByType('mark'))
-      </script>
 
       <ul class="navbar-menu">
         <li class="navbar-menu__dropdown"><a id="item-1" href="#">Platform</a></li>
@@ -791,14 +786,14 @@
         });
       } else {
         let script = document.createElement('script');
-        script.async = true;
+        script.async = false;
         script.src = "/assets/js/homework/vendor/lazyload.min.js";
         document.body.appendChild(script);
       }
     </script>
 
     <script src="/assets/js/homework/vendor/jquery/dist/jquery.min.js"></script>
-    <s>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</s>
+    <script>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</script>
 
     <script data-main="/assets/js/homework/home" src="/assets/js/homework/vendor/requirejs/require.js"></script>
 
@@ -808,7 +803,7 @@
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
       (function(){
       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
+      s1.async=false;
       s1.src='https://embed.tawk.to/5fc2ba00920fc91564cb9b3c/default';
       s1.charset='UTF-8';
       s1.setAttribute('crossorigin','*');
@@ -822,7 +817,6 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <script async src="https://js.stripe.com/v3/"></script>
-
+    <script>try{Typekit.load();}catch(e){}</script>
   </body>
 </html>
