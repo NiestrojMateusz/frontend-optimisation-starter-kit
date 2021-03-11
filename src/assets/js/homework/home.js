@@ -169,15 +169,16 @@ require(["./main"], function (main) {
       },
 
       init: function () {
+        var self = this;
         this.adjust_banner_height();
 
         var infobox = document.querySelector(".info-box");
         var sliderFeatures = document.querySelector("#slider-features");
 
         if (sliderFeatures) {
-          var sliderObserver = new IntersectionObserver((entries) => {
+          var sliderObserver = new IntersectionObserver(function (entries) {
             if (entries[0].intersectionRatio <= 0) return;
-            this.slider_features();
+            slef.slider_features();
             sliderObserver.disconnect();
           });
           // start observing
@@ -185,9 +186,9 @@ require(["./main"], function (main) {
         }
 
         if (infobox) {
-          var infoBoxObserver = new IntersectionObserver((entries) => {
+          var infoBoxObserver = new IntersectionObserver(function (entries) {
             if (entries[0].intersectionRatio <= 0) return;
-            this.info_box_anim();
+            self.info_box_anim();
             infoBoxObserver.disconnect();
           });
           // start observing
